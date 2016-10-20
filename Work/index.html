@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       <link rel="stylesheet" type="text/css" href="style.css">
+      <title>Canvas</title>
+       
+       
+    
+    <script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hello World",10,50);
+    </script>
+       
+   </head>
+   <body onload="initcnvs()" onmousedown="mDown(event)" onmousemove="mMove(event)" onmouseup="mUp(event)">
+       <div class="top">
+           <div class="m1">
+               <button>Фаил</button>            
+           </div>
+           <div class="m2">
+               erwer
+           </div>
+           <div class="m3">
+               wer
+           </div>
+       </div>
+       
+       <div class="mid">
+           <canvas id="cnvs" width="1800" height="750"></canvas>
+           <script type="text/javascript" src="Line/line.js"></script>
+       </div>
+       
+       <div class="bot">
+       
+       </div>
+   </body>
+</html>

@@ -1,0 +1,44 @@
+body {
+       margin: 0;
+}
+
+  #cnvs {
+   outline: #000000 1px solid;
+  }
+
+
+
+.top {
+    height: 50px;  
+    background-color: black;
+    white-space:nowrap
+}
+
+.m1{
+
+    height: 49px;
+    background-color: red;
+    float: left;
+}
+
+.m2{
+    height: 49px;
+    background-color: red;
+   float: left;
+}
+
+.m3{
+    height: 49px;
+    background-color: red;
+    float: left;
+}
+
+.mid {
+    height: 800px;  
+
+}
+
+.bot {
+    height: 50px;  
+    background-color: black;
+}
