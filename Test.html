@@ -2,19 +2,89 @@
 <html>
 <head>
 <script>
-function processData(c1,c2) {
-	var cv1 = document.getElementById(c1).value;
-	var cv2 = document.getElementById(c2).value;
-	alert(cv1+"\n"+cv2);
-	// Use Ajax-PHP to send the values to server storage
-	// Ajax-PHP Video Tutorial - www.developphp.com/view.php?tid=1185
+           
+           var canvas;
+var context;
+
+window.onload = function() {
+      canvas = document.getElementById("drawingCanvas");
+      context = canvas.getContext("2d");
+       
+      // Подключаем требуемые для рисования события
+      canvas.onmousedown = startDrawing;
+      canvas.onmouseup = stopDrawing;
+      canvas.onmouseout = stopDrawing;
+      canvas.onmousemove = draw;
+   }
+
+var previousColorElement;
+
+function changeColor(color, imgElement)
+{
+    // 	Меняем текущий цвет рисования
+	context.strokeStyle = color;
+	
+	// Меняем стиль элемента <img>, по которому щелкнули
+	imgElement.className = "Selected";
+	
+	// Возвращаем ранее выбранный элемент <img> в нормальное состояние
+	if (previousColorElement != null)
+	   previousColorElement.className = "";
+	   
+	previousColorElement = imgElement;
 }
+           
+           var previousThicknessElement;
+
+function changeThickness (thickness, imgElement)
+{
+    // Изменяем текущую толщину линии
+	context.lineWidth = thickness;
+	
+	// Меняем стиль элемента <img>, по которому щелкнули
+	imgElement.className = "Selected";
+	
+	// Возвращаем ранее выбранный элемент <img> в нормальное состояние
+	if (previousThicknessElement != null)
+	   previousThicknessElement.className = "";
+	   
+	previousThicknessElement = imgElement;
+}
+           
+           function startDrawing(e) {
+	// Начинаем рисовать
+	isDrawing = true;
+	
+	// Создаем новый путь (с текущим цветом и толщиной линии) 
+	context.beginPath();
+	
+	// Нажатием левой кнопки мыши помещаем "кисть" на холст
+	context.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+}
+           
+           function draw(e) {
+	if (isDrawing == true)
+	{
+	  	// Определяем текущие координаты указателя мыши
+		var x = e.pageX - canvas.offsetLeft;
+		var y = e.pageY - canvas.offsetTop;
+		
+		// Рисуем линию до новой координаты
+		context.lineTo(x, y);
+		context.stroke();
+	}
+}
+           
+           function stopDrawing() {
+    isDrawing = false;	
+}
+               
+           
 </script>
 </head>
 <body>
-<h2>HTML5 Color Picker + Javascript Tutorial</h2>
-Choose Color 1: <input type="color" name="color1" id="color1"><br /><br />
-Choose Color 2: <input type="color" name="color2" id="color2"><br /><br />
-<input type="button" onClick="processData('color1','color2')" value="Submit" />
+
+        <canvas id="drawingCanvas" width="500" height="300"></canvas>
+
 </body>
 </html>

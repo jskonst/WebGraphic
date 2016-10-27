@@ -1,40 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-       <link rel="stylesheet" type="text/css" href="style.css">
-      <title>Canvas</title>
-       
-       
-    
-    <script type="text/javascript">
-    var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.font = "30px Arial";
-ctx.fillText("Hello World",10,50);
-    </script>
-       
+       <link rel="stylesheet" type="text/css" href="css/style.css">
+       <title>Canvas</title>
+       <script src="js/all.js"></script>
    </head>
-   <body onload="initcnvs()" onmousedown="mDown(event)" onmousemove="mMove(event)" onmouseup="mUp(event)">
+   <body>
+       
        <div class="top">
-           <div class="m1">
-               <button>Фаил</button>            
+           
+       </div>
+       
+       <div class="midLeft">
+                      
+           <div class="block1" onclick="changeColor('rgb(100,21,29)', this)"></div>           
+           <div class="block2" onclick="changeColor('rgb(100,201,129)', this)"></div>
+           <hr>
+           <div class="block2a">
+               <img src="img/instruments/1.png" alt="Карандаш">
+               <img src="img/instruments/2.png" alt="Заливка">
+               <img src="img/instruments/3.png" alt="Стиратка">
+               <img src="img/instruments/4.png" alt="Текст">        
            </div>
-           <div class="m2">
-               erwer
+           <hr>
+           <div class="block3">
+               <img src="img/color/1.png" alt="Чёрный" onclick="changeColor('#ffffff', this)">
+               <img src="img/color/2.png" alt="Чёрный" onclick="changeColor('#000000', this)">
+               <img src="img/color/3.png" alt="Чёрный" onclick="changeColor('#c3c3c3', this)">
+               <img src="img/color/4.png" alt="Чёрный" onclick="changeColor('#7f7f7f', this)">  
+               <img src="img/color/5.png" alt="Чёрный" onclick="changeColor('#b97a57', this)">
+               <img src="img/color/6.png" alt="Чёрный" onclick="changeColor('#880015', this)">
+               <img src="img/color/7.png" alt="Чёрный" onclick="changeColor('#ffaec9', this)">
+               <img src="img/color/8.png" alt="Чёрный" onclick="changeColor('#ed1c24', this)">  
+               <img src="img/color/9.png" alt="Чёрный" onclick="changeColor('#ffc90e', this)">
+               <img src="img/color/10.png" alt="Чёрный" onclick="changeColor('#ff7f27', this)">
+               <img src="img/color/11.png" alt="Чёрный" onclick="changeColor('#efe4b0', this)">
+               <img src="img/color/12.png" alt="Чёрный" onclick="changeColor('#fff200', this)">  
+               <img src="img/color/13.png" alt="Чёрный" onclick="changeColor('#b5e61d', this)">
+               <img src="img/color/14.png" alt="Чёрный" onclick="changeColor('#22b14c', this)">
+               <img src="img/color/15.png" alt="Чёрный" onclick="changeColor('#99d9ea', this)">
+               <img src="img/color/16.png" alt="Чёрный" onclick="changeColor('#00a2e8', this)">  
+               <img src="img/color/17.png" alt="Чёрный" onclick="changeColor('#7092be', this)">
+               <img src="img/color/18.png" alt="Чёрный" onclick="changeColor('#3f48cc', this)">
+               <img src="img/color/19.png" alt="Чёрный" onclick="changeColor('#c8bfe7', this)">
+               <img src="img/color/20.png" alt="Чёрный" onclick="changeColor('#a349a4', this)">  
            </div>
-           <div class="m3">
-               wer
+           <hr>
+           <div class="block4">
+               <img src="img/thickness/1.png" alt="Тонкая кисть" onclick="changeThickness(1, this)">
+               <img src="img/thickness/2.png" alt="Нормальная кисть" onclick="changeThickness(3, this)"> 
+               <img src="img/thickness/3.png" alt="Толстая кисть" onclick="changeThickness(6, this)">    
+               <img src="img/thickness/4.png" alt="очень толстая кисть" onclick="changeThickness(9, this)">    
+           </div>
+           <hr>
+           
+           <div class="block5">
+               <img id="redPen" src="http://professorweb.ru/downloads/pen_red.gif" alt="Красная кисть" onclick="changeColor('rgb(212,21,29)', this)">
+        <img id="greenPen" src="http://professorweb.ru/downloads/pen_green.gif" alt="Зеленая кисть" onclick="changeColor('rgb(131,190,61)', this)">                       
            </div>
        </div>
        
-       <div class="mid">
-           <canvas id="cnvs" width="1800" height="750"></canvas>
-           <script type="text/javascript" src="Line/line.js"></script>
-       </div>
-       
-       <div class="bot">
-       
+       <div class="midRight">
+           <canvas id="drawingCanvas" width="800" height="701"></canvas>
        </div>
    </body>
 </html>
