@@ -70,3 +70,16 @@ var canvas;
             function stopDrawing() {
                 isDrawing = false;	
             }
+
+// очистка
+    function clearCanvas() {
+	   context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+//Кнопка
+function processData(c1) {
+	var cv1 = document.getElementById(c1).value;
+	alert(cv1);
+}
+
+

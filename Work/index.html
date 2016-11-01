@@ -5,12 +5,26 @@
        <link rel="stylesheet" type="text/css" href="css/style.css">
        <title>Canvas</title>
        <script src="js/all.js"></script>
+       <script src="js/file.js"></script> 
+       
+      
    </head>
    <body>
        
        <div class="top">
+           <button onclick="clearCanvas()">Очистить Canvas</button>    
            
-       </div>
+           <select id="format">
+    <option value="image/png">Format PNG</option>
+    <option value="image/jpeg">Format JPEG</option>
+</select>
+<input type="file" onchange="draw(this.files[0])" />
+<div><img id="image" /></div>
+<div id="picture"></div>
+
+           </div>
+
+
        
        <div class="midLeft">
                       
@@ -46,6 +60,10 @@
                <img src="img/color/19.png" alt="Чёрный" onclick="changeColor('#c8bfe7', this)">
                <img src="img/color/20.png" alt="Чёрный" onclick="changeColor('#a349a4', this)">  
            </div>
+           <div class="block3a">
+               <input type="color" name="color1" id="color1" onclivk>
+               <input type="button" onClick="processData('color1')" value="Color " />
+           </div>
            <hr>
            <div class="block4">
                <img src="img/thickness/1.png" alt="Тонкая кисть" onclick="changeThickness(1, this)">
@@ -53,16 +71,14 @@
                <img src="img/thickness/3.png" alt="Толстая кисть" onclick="changeThickness(6, this)">    
                <img src="img/thickness/4.png" alt="очень толстая кисть" onclick="changeThickness(9, this)">    
            </div>
-           <hr>
-           
+           <hr>           
            <div class="block5">
-               <img id="redPen" src="http://professorweb.ru/downloads/pen_red.gif" alt="Красная кисть" onclick="changeColor('rgb(212,21,29)', this)">
-        <img id="greenPen" src="http://professorweb.ru/downloads/pen_green.gif" alt="Зеленая кисть" onclick="changeColor('rgb(131,190,61)', this)">                       
+                    
            </div>
        </div>
        
        <div class="midRight">
-           <canvas id="drawingCanvas" width="800" height="701"></canvas>
+           <canvas id="drawingCanvas" width="1920" height="1080"></canvas>
        </div>
    </body>
 </html>
